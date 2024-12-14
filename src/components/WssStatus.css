@@ -1,0 +1,114 @@
+* {
+    font-family: sans-serif;
+    /* Change your font family */
+
+  }
+  table#validators1 tbody tr.error {
+    background-color: #f3e2dd;
+  }
+
+  table#validators1 tbody tr.warn {
+    background-color: #f5f3d6;
+  }
+  #validators1 {
+    border-collapse: collapse;
+    margin: 25px 25px;
+    font-size: 0.85em;
+    min-width: 1400px;
+    align-items:center;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+  .InActive {
+    color: #dc143c;
+    font-weight: bolder;
+  }
+
+  .apy {
+    text-decoration: none;
+}
+
+  #validators1 thead tr {
+    background-color: rgb(47, 179, 234);
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  #validators1 th,
+  #validators1 td {
+    padding: 12px 15px;
+    text-align: center;
+  }
+
+  #validators1 tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+  .green{
+    color: #0da724;
+    font-weight: bold;
+  }
+
+  #validators1 tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+
+  #validators1 tbody tr:last-of-type {
+    border-bottom: 2px solid #76D7C4;
+  }
+
+  #validators1 tbody tr.active-row {
+    font-weight: bold;
+    color: #76D7C4;
+  }
+  .validator1{
+  font-weight: bolder;
+  }
+  .decorate{
+    background-color: #CEE5D0;
+  }
+
+  .bold{
+    font-weight: bolder;
+    }
+
+    .header1{
+      margin-top: 2em;
+      text-align: center;
+    }
+
+    .tooltip {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 120px;
+      background-color: rgb(151, 248, 161);
+      color: rgb(13, 13, 13);
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px 0;
+      position: absolute;
+      z-index: 1;
+      bottom: 100%;
+      left: 50%;
+      margin-left: -60px;
+    }
+    
+    .tooltip .tooltiptext::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: black transparent transparent transparent;
+    }
+    
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+    }
