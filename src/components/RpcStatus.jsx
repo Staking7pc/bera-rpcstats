@@ -12,6 +12,7 @@ function RpcStatus(props) {
     { key: "catchingUp", label: "CATCHING_UP" },
     { key: "indexer", label: "INDEXING" },
     { key: "earliestBlock", label: "EARLIEST_BLOCK" },
+    { key: "version", label: "VERSION" },
     { key: "latestBlock", label: "LATEST_BLOCK" },
     { key: "network", label: "NETWORK" },
 
@@ -92,6 +93,7 @@ function RpcStatus(props) {
                       <td className={val.catchingUp === "False" ? "Active" : "InActive"}>{val.catchingUp}</td>
                       <td className={val.indexer == 'on' ? 'green' : 'NO'}>{String(val.indexer).toUpperCase()}</td>
                       <td>{val.earliestBlock}</td>
+                      <td>{val.version}</td>
                       <td className={val.latestBlock == 'None' ? 'InActive' : 'NO'}>{val.latestBlock}</td>
                       <td className={val.network === "blockspacerace-0" ? "Active" : "InActive"}>{val.network}</td>
                     </tr>
