@@ -1,114 +1,161 @@
+/* Global font */
 * {
-    font-family: sans-serif;
-    /* Change your font family */
-
-  }
-  table#validators1 tbody tr.error {
-    background-color: #f3e2dd;
-  }
-
-  table#validators1 tbody tr.warn {
-    background-color: #f5f3d6;
-  }
-  #validators1 {
-    border-collapse: collapse;
-    margin: 25px 25px;
-    font-size: 0.85em;
-    min-width: 1400px;
-    align-items:center;
-    border-radius: 5px 5px 0 0;
-    overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  }
-  .InActive {
-    color: #dc143c;
-    font-weight: bolder;
-  }
-
-  .apy {
-    text-decoration: none;
+  font-family: sans-serif;
 }
 
-  #validators1 thead tr {
-    background-color: rgb(47, 179, 234);
-    color: #ffffff;
-    text-align: center;
-    font-weight: bold;
-  }
+/* Container for table. Center on large screens */
+.table-container {
+  display: flex;
+  flex-direction: column; /* So the header & table stack vertically */
+  align-items: center;
+  padding: 1rem;
+}
 
-  #validators1 th,
-  #validators1 td {
-    padding: 12px 15px;
-    text-align: center;
-  }
+/* The table itself */
+#validators {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.85em;
+  min-width: 1200px; /* Enough space for 6 columns */
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
 
-  #validators1 tbody tr {
-    border-bottom: 1px solid #dddddd;
-  }
-  .green{
-    color: #0da724;
-    font-weight: bold;
-  }
+/* Table header row */
+#validators thead tr {
+  background-color: #5C4033; /* Brownish color */
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
 
-  #validators1 tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
-  }
+#validators th,
+#validators td {
+  padding: 12px 15px;
+  text-align: center;
+}
 
-  #validators1 tbody tr:last-of-type {
-    border-bottom: 2px solid #76D7C4;
-  }
+/* Row styling */
+#validators tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+#validators tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+#validators tbody tr:last-of-type {
+  border-bottom: 2px solid #76D7C4;
+}
 
-  #validators1 tbody tr.active-row {
-    font-weight: bold;
-    color: #76D7C4;
-  }
-  .validator1{
+/* 'Failed' row highlight */
+.error {
+  background-color: #f3e2dd;
+}
+
+/* Inactive status text color */
+.InActive {
+  color: crimson;
   font-weight: bolder;
+}
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer; /* Indicate clickable text */
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: rgb(151, 248, 161);
+  color: #000; /* Dark text */
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 9999;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+}
+
+/* Show tooltip on hover */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+/* 'Copied!' style */
+.tooltip:hover .tooltiptext.copied {
+  background-color: #0da724;
+  color: white;
+}
+
+/* Network buttons wrapper */
+.network-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+/* Each network button */
+.network-buttons button {
+  border: 1px solid #ccc;
+  padding: 8px 16px;
+  margin: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: #fff; /* White by default */
+}
+
+/* Active button style */
+.network-buttons button.active {
+  background-color: #5C4033;
+  color: white;
+  border-color: #ffffff;
+}
+
+/* MEDIA QUERY: smaller screens */
+@media (max-width: 768px) {
+  /* Let table scroll horizontally if it doesn't fit */
+  #validators {
+    min-width: unset;
+    width: 95%;
+    margin: 0 auto;
+    box-shadow: none; /* optional to remove shadows on mobile */
   }
-  .decorate{
-    background-color: #CEE5D0;
+
+  /* Buttons full width on smaller screens */
+  .network-buttons button {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
   }
 
-  .bold{
-    font-weight: bolder;
-    }
+  /* Possibly reduce text/table padding */
+  #validators th,
+  #validators td {
+    padding: 8px 5px;
+  }
 
-    .header1{
-      margin-top: 2em;
-      text-align: center;
-    }
-
-    .tooltip {
-      position: relative;
-      display: inline-block;
-    }
-    
-    .tooltip .tooltiptext {
-      visibility: hidden;
-      width: 120px;
-      background-color: rgb(151, 248, 161);
-      color: rgb(13, 13, 13);
-      text-align: center;
-      border-radius: 6px;
-      padding: 5px 0;
-      position: absolute;
-      z-index: 1;
-      bottom: 100%;
-      left: 50%;
-      margin-left: -60px;
-    }
-    
-    .tooltip .tooltiptext::after {
-      content: "";
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      margin-left: -5px;
-      border-width: 5px;
-      border-style: solid;
-      border-color: black transparent transparent transparent;
-    }
-    
-    .tooltip:hover .tooltiptext {
-      visibility: visible;
-    }
+  .tooltip .tooltiptext {
+    margin-left: 0;
+    left: 10%;
+    right: 10%;
+    width: 80%;
+  }
+}

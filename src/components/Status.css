@@ -1,0 +1,190 @@
+/* Container for the entire component */
+.reward-status-grid-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Page title styling */
+.page-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem; /* Adjusted for better readability */
+}
+
+/* Filter form styling */
+.filter-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; /* Vertically center all form elements */
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.filter-group input,
+.filter-group select {
+  padding: 8px;
+  width: 200px;
+  font-size: 0.9rem; /* Slightly smaller font for compactness */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.filter-buttons {
+  display: flex;
+  flex-direction: row; /* Align buttons horizontally */
+  gap: 10px; /* Spacing between buttons */
+  align-items: center; /* Vertically center buttons with inputs */
+}
+
+.filter-buttons button {
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 0.9rem; /* Consistent font size */
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  transition: background-color 0.3s;
+  height: 36px; /* Set consistent height to match input fields */
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.filter-buttons button:hover {
+  background-color: #0056b3;
+}
+
+/* Grid container for blocks */
+.block-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30px, 1fr)); /* Reduced min width */
+  gap: 3px; /* Reduced gap for a denser grid */
+  max-height: 80vh; /* Optional: Limit grid height with scrolling */
+  overflow: auto;
+  padding: 40px 10px 40px 10px; /* Added padding-top and padding-bottom */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+/* Individual block styling */
+.block {
+  width: 30px; /* Reduced width */
+  height: 30px; /* Reduced height */
+  position: relative;
+  cursor: pointer;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Block colors based on status */
+.block-grey {
+  background-color: #a9a9a9; /* Darker grey for better visibility */
+}
+
+.block-red {
+  background-color: #dc3545; /* Bootstrap red */
+}
+
+.block-green {
+  background-color: #28a745; /* Bootstrap green */
+}
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip-text {
+  visibility: hidden;
+  width: 220px; /* Increased width to accommodate longer miner addresses */
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 10px;
+  position: absolute;
+  z-index: 10;
+  top: 110%; /* Position below the block */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  word-wrap: break-word; /* Allow text to wrap */
+  font-size: 0.8rem; /* Slightly smaller font for compactness */
+}
+
+/* Arrow below the tooltip */
+.tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: -5px; /* Arrow pointing up */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+}
+
+/* Show the tooltip text on hover */
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Loading message styling */
+.loading-message {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 50px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .filter-form {
+    flex-direction: column; /* Stack form elements vertically */
+    gap: 10px;
+  }
+
+  .filter-group input,
+  .filter-group select {
+    width: 100%; /* Make inputs full width on small screens */
+  }
+
+  .filter-buttons {
+    width: 100%;
+    justify-content: center; /* Center buttons */
+  }
+
+  .filter-buttons button {
+    width: 100%; /* Make buttons full width on small screens */
+    margin-bottom: 5px; /* Add spacing between buttons */
+  }
+
+  .block-grid {
+    grid-template-columns: repeat(auto-fill, minmax(25px, 1fr)); /* Adjust grid for smaller blocks */
+    gap: 2px;
+    padding: 20px 10px 20px 10px; /* Reduce padding for smaller screens */
+  }
+
+  .block {
+    width: 25px;
+    height: 25px;
+  }
+
+  .tooltip-text {
+    width: 180px;
+  }
+}

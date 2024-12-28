@@ -1,19 +1,41 @@
-import React from 'react'
-import './Header.css'
+import React from "react";
+import "./Header.css";
 
 export default function Header() {
   return (
-    <div>
+    <header className="header-nav">
       <ul>
-        <li className='li'>
-          <a class="" href="https://brightlystake.com">Brightlystake</a>
+        {/* "Brand" or logo link on the far left */}
+        <li className="brand">
+          <a href="https://brightlystake.com">Brightlystake</a>
         </li>
-        <li className='li-r'><a class="active" href="/rpc-status">RPC</a></li>
-        <li className='li-r'><a class="active" href="/evm-rpc-status">EVM-RPC</a></li>
-        <li className='li-r'><a class="active" href="/wss-status">WSS</a></li>
-        {/* <li className='li-r'><a class="active" href="/seed-status">seeds/peers-test</a></li> */}
-        <li className='li-r'><a class="active" href="/">Home</a></li>
+        {/* Nav links (float-like behavior handled by flexbox) */}
+        <li>
+          <a className="active" href="/rpc-status">
+            RPC
+          </a>
+        </li>
+        <li>
+          <a className="active" href="/evm-rpc-status">
+            EVM-RPC
+          </a>
+        </li>
+        <li>
+          <a className="active" href="/wss-status">
+            WSS
+          </a>
+        </li>
+        <li>
+          <a className="active" href="/rewards-distribution">
+            REWARDS
+          </a>
+        </li>
+        <li>
+          <a className="active" href="/">
+            HOME
+          </a>
+        </li>
       </ul>
-    </div>
-  )
+    </header>
+  );
 }

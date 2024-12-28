@@ -1,43 +1,51 @@
-        ul {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-          text-align: center;
-          overflow: scroll;
-          background-color: #A0522D;
-        }
+/****************************
+ * Header.css 
+ * Styles the Header component’s nav bar 
+ ****************************/
 
-        .logo {
-          width: 10px;
-          height: 8px;
-        }
+/* The parent container for the nav */
+.header-nav {
+  background-color: #5C4033;   /* The brownish header color */
+  width: 100%;
+}
 
-        .li {
-          padding-left: 3%;
-          float: left;
-          font-size: larger;
-          font-weight: bolder;
-          text-align: center;
-          text-transform: inherit;
-        }
+/* Remove default list styling and use flex for horizontal layout */
+.header-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 
-        .li-r {
-          float: right;
-        }
+  display: flex;          /* enables flex layout */
+  align-items: center;    /* vertically center the items */
+  justify-content: flex-start; /* brand at left, other items to the right */
+}
 
-        li a {
-          display: block;
-          color: white;
-          text-align: center;
-          padding: 14px 16px;
-          text-decoration: none;
-        }
+/* The brand (left-most item) */
+.header-nav .brand {
+  margin-right: auto;     /* pushes other nav items to the right side */
+}
 
-        .active {
-          background-color: #A0522D;
-          font-size: larger;
-        }
+/* Links (common styles) */
+.header-nav li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 14px 16px;
+  font-size: larger;
+  font-weight: bolder;
+  transition: background-color 0.2s ease-in-out;
+}
 
-        li a:hover {
-          background-color: rgb(14, 100, 212);
-        }
+/* Hover effect */
+.header-nav li a:hover {
+  background-color: rgba(250, 116, 89, 0.781);
+  border-radius: 4px; /* optional rounding on hover */
+}
+
+/* Active link styling */
+.header-nav a.active {
+  /* If you want to highlight the active link differently, add style here */
+  /* For example: */
+  background-color: #5C4033; /* A darker shade of brown */
+  border-radius: 4px;
+}

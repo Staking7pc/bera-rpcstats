@@ -5,6 +5,8 @@ import Home from './components/Home';
 import RpcStatus from "./components/RpcStatus";
 import EvmRpcStatus from "./components/EvmRpcStatus";
 import WssStatus from "./components/WssStatus";
+import Rewards from "./components/Rewards";
+import RewardsDistributionStatus from "./components/Status";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
@@ -22,6 +24,8 @@ root.render(
         <Route path="/rpc-status" element={<RpcStatus/>} />
         <Route path="/evm-rpc-status" element={<EvmRpcStatus/>} />
         <Route path="/wss-status" element={<WssStatus/>} />
+        <Route path="/reward-status" element={<Rewards/>} />
+        <Route path="/rewards-distribution" element={<RewardsDistributionStatus/>} />
 
         {/* <Route path="/seed-peer-status" element={<Seed/>} />
         <Route path="/self-test" element={<APIStatus/>} />

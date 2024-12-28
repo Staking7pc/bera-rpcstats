@@ -1,0 +1,152 @@
+/* Container for entire Rewards section */
+.rewards-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  padding: 1rem;
+}
+
+/* If you have a special class for some box */
+.filter-box.special {
+  background-color: #ffc107;
+}
+
+/* Table wrapper for horizontal overflow on small screens */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Main table styling */
+#validators1 {
+  border-collapse: collapse;
+  margin: 0 auto;
+  font-size: 0.85em;
+  min-width: 600px; /* Enough to show columns properly */
+  border-radius: 5px 5px 0 0;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+#validators1 thead tr {
+  background-color: #5C4033;
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+}
+
+#validators1 th,
+#validators1 td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+#validators1 tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+#validators1 tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+#validators1 tbody tr:last-of-type {
+  border-bottom: 2px solid #76D7C4;
+}
+
+/* If reward_status == "Failed" => highlight row */
+.error {
+  background-color: #f3e2dd;
+}
+
+/* Text color for reward_status == false */
+.green {
+  color: #0da724;
+  font-weight: bold;
+}
+
+/* Text color for reward_status != false */
+.InActive {
+  color: crimson;
+  font-weight: bolder;
+}
+
+/* Pagination controls */
+.pagination-controls {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pagination-controls button {
+  background-color: #5C4033;
+  color: #fff;
+  border: 1px solid #5C4033;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.pagination-controls button:hover:not(:disabled) {
+  background-color: #3e2b22;
+}
+
+.pagination-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.page-info {
+  font-weight: bold;
+}
+
+/* Media Query: mobile adjustments */
+@media (max-width: 768px) {
+  .filter-box {
+    flex: 1 1 100%;
+  }
+
+  #validators1 {
+    min-width: unset;
+    width: 80%;
+    margin: 0 auto;
+    box-shadow: none;
+  }
+
+  .pagination-controls {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* Put the filters on a single row, centered horizontally */
+.filters-container {
+  display: flex;               /* Use Flexbox */
+  justify-content: center;     /* Center them horizontally */
+  align-items: center;         /* Vertically center items */
+  gap: 1rem;                   /* Spacing between buttons */
+  margin-bottom: 1.5rem;       /* Space under the row */
+}
+
+/* Filter buttons styled to match your brown color scheme */
+.filter-box {
+  background-color: #ea5946;   /* Brown color (matches table header) */
+  color: #fff;                 /* White text */
+  padding: 8px 16px;           /* Button-like sizing */
+  border-radius: 5px;          /* Slight rounding */
+  cursor: pointer;             /* Hand cursor on hover */
+  font-size: 14px;             /* Font size */
+  font-weight: bold;           /* Bold text */
+  transition: background-color 0.2s ease-in-out;
+  text-align: center;          /* Center text in the button */
+  min-width: 150px;            /* Make both buttons reasonably wide */
+}
+
+/* Hover effect: slightly darker brown */
+.filter-box:hover {
+  background-color: #3e2b22;   /* A bit darker shade of brown */
+}
+
