@@ -5,7 +5,8 @@
 /node_modules_backup
 /.pnp
 .pnp.js
-
+1.json
+1.py
 # testing
 /coverage
 
