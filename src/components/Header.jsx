@@ -25,11 +25,11 @@ export default function Header() {
             WSS
           </a>
         </li>
-        <li>
+        {/* <li>
           <a className="active" href="/rewards-distribution">
             REWARDS
           </a>
-        </li>
+        </li> */}
         <li>
           <a className="active" href="/">
             HOME
